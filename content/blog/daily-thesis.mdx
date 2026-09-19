@@ -1,0 +1,71 @@
+---
+title: "Building Daily Thesis"
+description: "Notes on building a personalized research feed app in Flutter, covering everything from onboarding to an offline-first architecture with no backend."
+date: "2026-09-19"
+tags: ["Flutter", "Daily Thesis", "Mobile"]
+type: "Project Log"
+---
+
+Daily Thesis started from a fairly specific annoyance: keeping up with new
+papers in CS, medicine, and biology meant either subscribing to a dozen
+noisy feeds or checking arXiv manually and forgetting to. I wanted something
+closer to a feed — pick your topics once, then get a stream of papers worth
+reading, without the app becoming another thing to manage.
+
+## The shape of the app
+
+The core loop is simple on purpose:
+
+- **Onboarding** — pick topics once, up front.
+- **Feed** — swipe through papers, save the ones worth returning to.
+- **Reading** — open a paper with quick actions and dark mode, so reading
+  doesn't mean leaving the app for a PDF viewer.
+- **History** — everything you've read or saved, kept locally.
+
+Everything is built in Flutter, which made the cross-platform decision easy —
+the same codebase covers Android, iOS, and desktop without much extra work
+per platform.
+
+## No backend, on purpose
+
+The bigger architectural decision was keeping all per-user data — reading
+history, saved papers, streaks — on-device only, in SQLite/Hive, with no
+server behind it. That has real trade-offs: no syncing across devices, no
+server-side analytics, nothing to fall back on if local storage gets wiped.
+
+But for a tool that's fundamentally "help me read more papers," it also
+means no accounts, no login friction, and nothing about what someone reads
+ever leaves their phone. For a research app, that felt like the right
+default rather than something to bolt on later as a privacy feature.
+
+## Making unfamiliar papers less intimidating
+
+The feature I've spent the most time on recently is what I've been calling
+the **AI Context Window** — a collapsible "New to this field? Tap for
+background" panel on each paper. Open it and you get a plain-language
+summary of the paper plus a glossary of the jargon inside it — things like
+sensitivity/specificity, circulating cell-free DNA, or z-scores, depending
+on the field.
+
+The idea is that the feed shouldn't only work for people already fluent in
+a field's vocabulary. A CS paper's methods section and a biology paper's
+methods section assume completely different background knowledge, and the
+app should meet a reader wherever they're starting from instead of assuming
+expertise.
+
+## What's half-built right now
+
+The site that recruits beta testers is currently out of date — it still
+shows the original feature set (topic onboarding, reading, history, an
+"extra features" carousel) but not the Context Window work or the streak
+system I'm building now: streaks, freeze/grace days, and milestones, meant
+to nudge toward the habit of actually opening the app regularly rather than
+letting papers pile up unread.
+
+## What's next
+
+Getting the marketing site to reflect what the app actually does is
+overdue. After that, the real test is testers — recruiting more of them
+through the Google Group and seeing whether the Context Window and the
+streak mechanics actually change reading behavior, or just look good on
+paper.
