@@ -637,3 +637,79 @@ a:focus-visible {
 .dark .prose-notebook .katex-display {
   border-color: rgba(232, 228, 217, 0.12);
 }
+
+.cityscape-bg {
+  position: fixed;
+  inset: auto 0 0 0;
+  height: 34vh;
+  min-height: 220px;
+  max-height: 340px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.cityscape-layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  color: var(--color-ink);
+  opacity: 0.07;
+}
+
+.dark .cityscape-layer {
+  color: var(--color-chalk);
+  opacity: 0.09;
+}
+
+.cityscape-far {
+  animation: cityscape-drift 140s linear infinite;
+  opacity: 0.05;
+}
+
+.dark .cityscape-far {
+  opacity: 0.06;
+}
+
+.cityscape-near {
+  animation: cityscape-drift 90s linear infinite reverse;
+}
+
+.cityscape-windows circle {
+  fill: var(--color-gold);
+  animation: cityscape-flicker 6s ease-in-out infinite;
+}
+
+.cityscape-windows circle:nth-child(odd) {
+  animation-delay: 1.2s;
+}
+.cityscape-windows circle:nth-child(3n) {
+  animation-delay: 2.6s;
+}
+.cityscape-windows circle:nth-child(4n) {
+  animation-delay: 3.8s;
+}
+
+@keyframes cityscape-drift {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes cityscape-flicker {
+  0%, 100% { opacity: 0.15; }
+  45% { opacity: 0.85; }
+  55% { opacity: 0.85; }
+  70% { opacity: 0.2; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cityscape-layer {
+    animation: none !important;
+  }
+  .cityscape-windows circle {
+    animation: none !important;
+    opacity: 0.4;
+  }
+}

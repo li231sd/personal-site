@@ -4,6 +4,7 @@ import "katex/dist/katex.min.css";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CityscapeBackground from "@/components/CityscapeBackground";
 
 const plexSerif = IBM_Plex_Serif({
   subsets: ["latin"],
@@ -45,6 +46,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col">
+        <CityscapeBackground />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
