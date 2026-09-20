@@ -23,12 +23,12 @@ export default async function ProjectPage({
     <div className="mx-auto max-w-4xl px-[var(--page-gutter)] py-16 md:py-24 page-reveal">
       <Link
         href="/projects"
-        className="graphite-link font-[var(--font-mono-var)] text-xs uppercase tracking-wide text-[var(--color-ink-muted)] dark:text-[var(--color-chalk-muted)]"
+        className="back-link graphite-link font-[var(--font-mono-var)] text-xs uppercase tracking-wide text-[var(--color-ink-muted)] dark:text-[var(--color-chalk-muted)]"
       >
         ← Current work
       </Link>
       <div className="mt-4 mb-8 md:flex md:items-start md:justify-between md:gap-12">
-        <h1 className="graphite-heading font-[var(--font-sans-var)] text-3xl leading-tight">
+        <h1 className="article-title graphite-heading font-[var(--font-sans-var)] text-3xl leading-tight">
           {project.title}
         </h1>
         <div className="mt-6 md:mt-1 md:w-48 shrink-0">

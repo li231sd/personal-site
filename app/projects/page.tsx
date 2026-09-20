@@ -19,7 +19,7 @@ export default function ProjectsIndex() {
           {projects.map((project) => (
             <li
               key={project.slug}
-              className="group grid grid-cols-[minmax(0,1fr)_4rem] items-start gap-4 border-b rule px-3 py-4 -mx-3 transition-colors first:pt-0 hover:bg-[color-mix(in_srgb,var(--color-paper)_88%,var(--color-gold)_12%)] dark:hover:bg-[color-mix(in_srgb,var(--color-slate)_88%,var(--color-gold)_12%)]"
+              className="project-row interactive-row group grid grid-cols-[minmax(0,1fr)_4rem] items-start gap-4 border-b rule px-3 py-4 -mx-3 transition-colors first:pt-0 hover:bg-[color-mix(in_srgb,var(--color-paper)_88%,var(--color-gold)_12%)] dark:hover:bg-[color-mix(in_srgb,var(--color-slate)_88%,var(--color-gold)_12%)]"
             >
               <Link
                 href={`/projects/${project.slug}`}

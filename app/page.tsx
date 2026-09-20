@@ -6,7 +6,7 @@ import EntryList from "@/components/EntryList";
 import Margin from "@/components/Margin";
 
 export default function Home() {
-  const posts = getAllPosts().slice(0, 6);
+  const posts = getAllPosts().slice(0, 3);
 
   return (
     <TwoColumn
@@ -35,6 +35,14 @@ export default function Home() {
           Nothing published yet. Add an .mdx file to content/blog/.
         </p>
       )}
+      <p className="mt-6 text-sm">
+        <Link
+          href="/blog"
+          className="back-link graphite-link text-[var(--color-blueprint)] dark:text-[var(--color-blueprint-dark)]"
+        >
+          Read all writing →
+        </Link>
+      </p>
       <h2 className="font-[var(--font-sans-var)] text-sm uppercase tracking-wide mt-12 mb-4 text-[var(--color-ink-muted)] dark:text-[var(--color-chalk-muted)]">
         Current work
       </h2>

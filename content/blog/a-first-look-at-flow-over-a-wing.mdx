@@ -1,0 +1,15 @@
+---
+title: "A First Look at Flow Over a Wing"
+description: "Notes from building a small CFD case from scratch, including the simplifying assumptions that matter more than the pretty contour plot."
+date: "2026-05-09"
+tags: ["CFD", "Physics", "Simulation"]
+type: "Research"
+---
+
+The first useful result from a simulation is rarely the image that looks the most scientific. It is the result that tells you whether the setup is asking a sensible question.
+
+For this case I started with a deliberately plain geometry, a coarse mesh, and boundary conditions I could explain without opening a reference book. That made the first run look less exciting, but it gave me somewhere solid to start comparing changes.
+
+The main lesson was how quickly numerical confidence can outrun physical confidence. A smooth contour plot can still come from a setup with the wrong scale, an under-resolved wake, or a boundary condition that quietly changes the question.
+
+The next pass is about mesh refinement and a better comparison against published data. For now, the simulation has done its job: it turned an intuition about lift and separation into a list of things I can measure.

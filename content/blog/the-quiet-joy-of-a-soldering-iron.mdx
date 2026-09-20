@@ -1,0 +1,15 @@
+---
+title: "The Quiet Joy of a Soldering Iron"
+description: "What a stubborn sensor board taught me about debugging physical systems, where the error messages are usually invisible."
+date: "2026-07-22"
+tags: ["Hardware", "Electronics", "Build Log"]
+type: "Project Log"
+---
+
+Software tells you when it is unhappy. Hardware often just gets warm.
+
+This board was supposed to be a quick afternoon project: read a sensor, filter the noisy signal, and print the result to a tiny display. Instead, the display stayed blank while every measurement looked almost reasonable.
+
+The breakthrough was not a clever circuit. It was slowing down enough to check the physical story one connection at a time. The ground was present, but not where I thought it was. The signal had a shape, but the wrong reference. The code was innocent.
+
+A soldering iron is a good reminder that debugging is not always about finding the bad line. Sometimes it is about rebuilding your picture of the system until the symptoms stop being surprising.

@@ -11,7 +11,7 @@ export default function EntryList({ posts }: { posts: PostMeta[] }) {
       {posts.map((post) => (
         <li
           key={post.slug}
-          className="group grid grid-cols-[4rem_minmax(0,1fr)] gap-x-4 gap-y-3 border-b rule px-3 py-4 -mx-3 transition-colors first:pt-0 hover:bg-[color-mix(in_srgb,var(--color-paper)_88%,var(--color-gold)_12%)] dark:hover:bg-[color-mix(in_srgb,var(--color-slate)_88%,var(--color-gold)_12%)] sm:grid-cols-[4rem_minmax(0,1fr)_auto]"
+          className="group grid grid-cols-[4rem_minmax(0,1fr)] gap-x-4 gap-y-3 border-b rule px-3 py-5 -mx-3 transition-colors hover:bg-[color-mix(in_srgb,var(--color-paper)_88%,var(--color-gold)_12%)] dark:hover:bg-[color-mix(in_srgb,var(--color-slate)_88%,var(--color-gold)_12%)] sm:grid-cols-[4rem_minmax(0,1fr)_auto]"
         >
           <span className="font-[var(--font-mono-var)] text-xs w-16 shrink-0 pt-0.5 text-[var(--color-ink-muted)] dark:text-[var(--color-chalk-muted)] transition-colors group-hover:text-[var(--color-gold)]">
             {format(new Date(post.date), "dd MMM")}
@@ -20,8 +20,8 @@ export default function EntryList({ posts }: { posts: PostMeta[] }) {
             href={`/blog/${post.slug}`}
             className="font-[var(--font-sans-var)] flex-1 min-w-0 hover:text-[var(--color-blueprint)] dark:hover:text-[var(--color-blueprint-dark)]"
           >
-            <span className="inline-flex max-w-full items-center gap-2">
-              <span className="min-w-0">{post.title}</span>
+            <span className="inline-flex max-w-full items-start gap-2">
+              <span className="min-w-0 font-medium">{post.title}</span>
               <ArrowUpRight
                 aria-hidden="true"
                 size={18}
@@ -31,6 +31,16 @@ export default function EntryList({ posts }: { posts: PostMeta[] }) {
             </span>
             <span className="block mt-1 text-sm leading-relaxed text-[var(--color-ink-muted)] dark:text-[var(--color-chalk-muted)]">
               {post.description}
+            </span>
+            <span className="mt-3 flex flex-wrap gap-2 font-[var(--font-mono-var)] text-[10px] uppercase tracking-wide text-[var(--color-gold)]">
+              {post.tags.slice(0, 3).map((tag) => (
+                <span
+                  key={tag}
+                  className="border border-[color-mix(in_srgb,var(--color-gold)_45%,transparent)] px-1.5 py-0.5"
+                >
+                  {tag}
+                </span>
+              ))}
             </span>
           </Link>
           <div className="col-start-2 shrink-0 sm:col-start-3 sm:row-span-2">

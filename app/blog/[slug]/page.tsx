@@ -40,11 +40,11 @@ export default async function PostPage({
     >
       <Link
         href="/blog"
-        className="graphite-link font-[var(--font-mono-var)] text-xs uppercase tracking-wide text-[var(--color-ink-muted)] dark:text-[var(--color-chalk-muted)]"
+        className="back-link graphite-link font-[var(--font-mono-var)] text-xs uppercase tracking-wide text-[var(--color-ink-muted)] dark:text-[var(--color-chalk-muted)]"
       >
         ← Writing
       </Link>
-      <h1 className="graphite-heading font-[var(--font-sans-var)] text-3xl mt-4 mb-8 leading-tight">
+      <h1 className="article-title graphite-heading font-[var(--font-sans-var)] text-3xl mt-4 mb-8 leading-tight">
         {post.title}
       </h1>
       <div className="prose-notebook">
