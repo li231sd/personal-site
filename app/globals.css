@@ -649,47 +649,77 @@ a:focus-visible {
   z-index: -1;
 }
 
+.cityscape-stack {
+  position: absolute;
+  inset: 0;
+  opacity: 0.48;
+  transition: opacity var(--theme-duration) var(--ease-out);
+}
+
+.cityscape-night {
+  opacity: 0;
+}
+
 .cityscape-layer {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 200%;
+  inset: 0;
+  overflow: hidden;
+  opacity: 0.9;
+}
+
+.cityscape-track {
+  display: flex;
+  width: max-content;
   height: 100%;
-  color: var(--color-ink);
-  opacity: 0.07;
+  animation: cityscape-drift 140s linear infinite;
+}
+
+.cityscape-track img {
+  display: block;
+  width: auto;
+  height: 100%;
+  max-width: none;
+  flex: 0 0 auto;
+}
+
+.cityscape-layer-1 {
+  opacity: 0.55;
+}
+
+.cityscape-layer-2 .cityscape-track {
+  animation-duration: 105s;
+}
+
+.cityscape-layer-3 .cityscape-track {
+  animation-duration: 80s;
+}
+
+.cityscape-layer-4 {
+  opacity: 0.72;
+}
+
+.cityscape-layer-4 .cityscape-track {
+  animation-duration: 58s;
 }
 
 .dark .cityscape-layer {
-  color: var(--color-chalk);
-  opacity: 0.09;
+  opacity: 0.7;
 }
 
-.cityscape-far {
-  animation: cityscape-drift 140s linear infinite;
-  opacity: 0.05;
+.dark .cityscape-layer-1 {
+  opacity: 0.55;
 }
 
-.dark .cityscape-far {
-  opacity: 0.06;
+.dark .cityscape-stack {
+  opacity: 0.58;
 }
 
-.cityscape-near {
-  animation: cityscape-drift 90s linear infinite reverse;
+.dark .cityscape-day {
+  opacity: 0;
 }
 
-.cityscape-windows circle {
-  fill: var(--color-gold);
-  animation: cityscape-flicker 6s ease-in-out infinite;
-}
-
-.cityscape-windows circle:nth-child(odd) {
-  animation-delay: 1.2s;
-}
-.cityscape-windows circle:nth-child(3n) {
-  animation-delay: 2.6s;
-}
-.cityscape-windows circle:nth-child(4n) {
-  animation-delay: 3.8s;
+.dark .cityscape-night {
+  opacity: 1;
 }
 
 @keyframes cityscape-drift {
@@ -697,19 +727,8 @@ a:focus-visible {
   to { transform: translateX(-50%); }
 }
 
-@keyframes cityscape-flicker {
-  0%, 100% { opacity: 0.15; }
-  45% { opacity: 0.85; }
-  55% { opacity: 0.85; }
-  70% { opacity: 0.2; }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .cityscape-layer {
+  .cityscape-track {
     animation: none !important;
-  }
-  .cityscape-windows circle {
-    animation: none !important;
-    opacity: 0.4;
   }
 }
