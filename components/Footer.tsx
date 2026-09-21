@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="site-footer border-t rule bg-[color-mix(in_srgb,var(--color-paper)_72%,var(--color-rule)_28%)] px-[var(--page-gutter)] py-7 mt-16 dark:bg-[color-mix(in_srgb,var(--color-slate)_88%,var(--color-chalk)_12%)]">
+    <footer className="site-footer border-t rule bg-[color-mix(in_srgb,var(--color-paper)_72%,var(--color-rule)_28%)] px-[var(--page-gutter)] py-7 dark:bg-[color-mix(in_srgb,var(--color-slate)_88%,var(--color-chalk)_12%)]">
       <div className="mx-auto max-w-6xl grid gap-5 sm:grid-cols-[1fr_auto_1fr] sm:items-center">
         <div className="flex items-baseline gap-3">
           <p className="font-[var(--font-sans-var)] text-sm font-medium text-[var(--color-ink)] dark:text-[var(--color-chalk)]">

@@ -45,11 +45,16 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body suppressHydrationWarning className="min-h-screen flex flex-col">
-        <CityscapeBackground />
+      <body
+        suppressHydrationWarning
+        className="min-h-screen flex flex-col site-shell"
+      >
         <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <main className="flex-1 site-main">{children}</main>
+        <div className="footer-shell">
+          <CityscapeBackground />
+          <Footer />
+        </div>
       </body>
     </html>
   );

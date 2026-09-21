@@ -50,6 +50,25 @@ body {
   transition: background-color var(--theme-duration) var(--ease-out), color var(--theme-duration) var(--ease-out);
 }
 
+.site-shell {
+  position: relative;
+}
+
+.site-main {
+  position: relative;
+  z-index: 1;
+}
+
+.site-main > :not(.cityscape-bg) {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-shell {
+  position: relative;
+  z-index: 1;
+}
+
 html.theme-transition body,
 html.theme-transition body *:not(.theme-toggle-icon) {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, --grid-color;
@@ -639,14 +658,16 @@ a:focus-visible {
 }
 
 .cityscape-bg {
-  position: fixed;
-  inset: auto 0 0 0;
-  height: 34vh;
-  min-height: 220px;
-  max-height: 340px;
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  left: 0;
+  height: 24vh;
+  min-height: 140px;
+  max-height: 240px;
   overflow: hidden;
   pointer-events: none;
-  z-index: -1;
+  z-index: 0;
 }
 
 .cityscape-stack {
