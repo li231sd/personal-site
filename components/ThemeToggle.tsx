@@ -1,14 +1,16 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Moon, Sun } from "@phosphor-icons/react/ssr";
 
 export default function ThemeToggle() {
   const transitionTimeout = useRef<number | undefined>(undefined);
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
     const storedTheme = window.localStorage.getItem("theme");
-    document.documentElement.classList.toggle("dark", storedTheme === "dark");
+    const shouldUseDark = storedTheme === "dark";
+    document.documentElement.classList.toggle("dark", shouldUseDark);
 
     return () => {
       if (transitionTimeout.current !== undefined) {
@@ -24,6 +26,7 @@ export default function ThemeToggle() {
     root.classList.add("theme-transition");
     root.classList.toggle("dark", nextIsDark);
     window.localStorage.setItem("theme", nextIsDark ? "dark" : "light");
+    setIsDark(nextIsDark);
 
     if (transitionTimeout.current !== undefined) {
       window.clearTimeout(transitionTimeout.current);
@@ -38,9 +41,10 @@ export default function ThemeToggle() {
     <button
       type="button"
       onClick={toggleTheme}
-      aria-label="Toggle dark mode"
-      title="Toggle dark mode"
-      className="relative h-[18px] w-[18px] text-[var(--color-ink-muted)] hover:text-[var(--color-gold)] dark:text-[var(--color-chalk-muted)] dark:hover:text-[var(--color-gold)]"
+      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      aria-pressed={isDark}
+      title={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      className="relative h-4.5 w-4.5 text-ink-muted hover:text-gold dark:text-chalk-muted dark:hover:text-gold"
     >
       <Sun
         aria-hidden="true"

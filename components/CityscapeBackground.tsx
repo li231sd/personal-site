@@ -21,6 +21,7 @@ export default function CityscapeBackground() {
                   alt=""
                   width={576}
                   height={324}
+                  loading="lazy"
                   key={`day-${layer}-${index}`}
                 />
               ))}
@@ -41,6 +42,7 @@ export default function CityscapeBackground() {
                   alt=""
                   width={576}
                   height={324}
+                  loading="lazy"
                   key={`night-${layer}-${index}`}
                 />
               ))}

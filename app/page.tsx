@@ -4,6 +4,7 @@ import Link from "next/link";
 import TwoColumn from "@/components/TwoColumn";
 import EntryList from "@/components/EntryList";
 import Margin from "@/components/Margin";
+import { ArrowUpRight, Sparkle } from "@phosphor-icons/react/ssr";
 
 export default function Home() {
   const posts = getAllPosts().slice(0, 3);
@@ -19,10 +20,18 @@ export default function Home() {
         />
       }
     >
-      <p className="graphite-heading text-lg leading-relaxed mb-10">
-        I build and study things! Physics, CFD, hardware, and tools for
-        learning.
-      </p>
+      <div className="home-intro">
+        <div className="home-kicker">
+          <Sparkle size={14} weight="fill" aria-hidden="true" />
+          Personal field notes
+        </div>
+        <h1 className="home-title graphite-heading">
+          I build and study things.
+        </h1>
+        <p className="home-description">
+          Physics, CFD, hardware, and tools for learning.
+        </p>
+      </div>
 
       <h2 className="font-[var(--font-sans-var)] text-sm uppercase tracking-wide mb-4 text-[var(--color-ink-muted)] dark:text-[var(--color-chalk-muted)]">
         Recent entries
@@ -40,7 +49,10 @@ export default function Home() {
           href="/blog"
           className="back-link graphite-link text-[var(--color-blueprint)] dark:text-[var(--color-blueprint-dark)]"
         >
-          Read all writing →
+          <span className="inline-flex items-center gap-1.5">
+            Read all writing
+            <ArrowUpRight size={16} weight="bold" aria-hidden="true" />
+          </span>
         </Link>
       </p>
       <h2 className="font-[var(--font-sans-var)] text-sm uppercase tracking-wide mt-12 mb-4 text-[var(--color-ink-muted)] dark:text-[var(--color-chalk-muted)]">
@@ -51,7 +63,10 @@ export default function Home() {
           href="/projects"
           className="text-[var(--color-blueprint)] dark:text-[var(--color-blueprint-dark)]"
         >
-          See current work →
+          <span className="inline-flex items-center gap-1.5">
+            See current work
+            <ArrowUpRight size={16} weight="bold" aria-hidden="true" />
+          </span>
         </Link>
       </p>
     </TwoColumn>

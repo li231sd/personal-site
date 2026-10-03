@@ -163,6 +163,43 @@ a:focus-visible {
   outline-offset: 4px;
 }
 
+.home-intro {
+  margin-bottom: 3.5rem;
+}
+
+.home-kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.15rem;
+  color: var(--color-gold);
+  font-family: var(--font-mono-var);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.home-title {
+  max-width: 14ch;
+  font-family: var(--font-sans-var);
+  font-size: clamp(2.8rem, 7vw, 5.25rem);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.home-description {
+  max-width: 42rem;
+  margin-top: 1.35rem;
+  color: var(--color-ink-muted);
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  line-height: 1.55;
+}
+
+.dark .home-description {
+  color: var(--color-chalk-muted);
+}
+
 .page-reveal {
   animation: page-reveal 620ms var(--ease-out) both;
   will-change: opacity, transform;
@@ -667,6 +704,7 @@ a:focus-visible {
   max-height: 240px;
   overflow: hidden;
   pointer-events: none;
+  transform: translateY(4rem);
   z-index: 0;
 }
 
@@ -751,5 +789,15 @@ a:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   .cityscape-track {
     animation: none !important;
+  }
+}
+
+@media (max-width: 639px) {
+  .footer-shell {
+    padding-top: 0;
+  }
+
+  .cityscape-bg {
+    display: none;
   }
 }
