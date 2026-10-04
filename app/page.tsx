@@ -4,7 +4,7 @@ import Link from "next/link";
 import TwoColumn from "@/components/TwoColumn";
 import EntryList from "@/components/EntryList";
 import Margin from "@/components/Margin";
-import { ArrowUpRight, Sparkle } from "@phosphor-icons/react/ssr";
+import { ArrowUpRight } from "@phosphor-icons/react/ssr";
 
 export default function Home() {
   const posts = getAllPosts().slice(0, 3);
@@ -22,7 +22,6 @@ export default function Home() {
     >
       <div className="home-intro">
         <div className="home-kicker">
-          <Sparkle size={14} weight="fill" aria-hidden="true" />
           Personal field notes
         </div>
         <h1 className="home-title graphite-heading">
@@ -47,7 +46,7 @@ export default function Home() {
       <p className="mt-6 text-sm">
         <Link
           href="/blog"
-          className="back-link graphite-link text-[var(--color-blueprint)] dark:text-[var(--color-blueprint-dark)]"
+          className="site-link graphite-link text-[var(--color-blueprint)] dark:text-[var(--color-blueprint-dark)]"
         >
           <span className="inline-flex items-center gap-1.5">
             Read all writing
@@ -61,7 +60,7 @@ export default function Home() {
       <p className="text-sm">
         <Link
           href="/projects"
-          className="text-[var(--color-blueprint)] dark:text-[var(--color-blueprint-dark)]"
+          className="site-link text-[var(--color-blueprint)] dark:text-[var(--color-blueprint-dark)]"
         >
           <span className="inline-flex items-center gap-1.5">
             See current work

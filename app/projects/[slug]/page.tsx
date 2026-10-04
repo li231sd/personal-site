@@ -23,7 +23,7 @@ export default async function ProjectPage({
     <div className="mx-auto max-w-4xl px-[var(--page-gutter)] py-16 md:py-24 page-reveal">
       <Link
         href="/projects"
-        className="back-link graphite-link font-[var(--font-mono-var)] text-xs uppercase tracking-wide text-[var(--color-ink-muted)] dark:text-[var(--color-chalk-muted)]"
+        className="site-link graphite-link font-[var(--font-mono-var)] text-xs uppercase tracking-wide text-[var(--color-ink-muted)] dark:text-[var(--color-chalk-muted)]"
       >
         ← Current work
       </Link>

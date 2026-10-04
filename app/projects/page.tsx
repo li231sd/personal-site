@@ -23,10 +23,10 @@ export default function ProjectsIndex() {
             >
               <Link
                 href={`/projects/${project.slug}`}
-                className="font-[var(--font-sans-var)] flex-1 min-w-0 hover:text-[var(--color-blueprint)] dark:hover:text-[var(--color-blueprint-dark)]"
+                className="card-link font-[var(--font-sans-var)] flex-1 min-w-0"
               >
                 <span className="inline-flex max-w-full items-center gap-2">
-                  <span className="min-w-0">{project.title}</span>
+                  <span className="card-link-title min-w-0">{project.title}</span>
                   <ArrowUpRight
                     aria-hidden="true"
                     size={18}

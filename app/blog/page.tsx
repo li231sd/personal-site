@@ -3,7 +3,7 @@ import { getAllPosts } from "@/lib/posts";
 import TwoColumn from "@/components/TwoColumn";
 import EntryList from "@/components/EntryList";
 import Link from "next/link";
-import { ArrowUpRight, BookOpenText, Sparkle } from "@phosphor-icons/react/ssr";
+import { ArrowUpRight, BookOpenText } from "@phosphor-icons/react/ssr";
 
 export const metadata = { title: "Writing — Sahil Singla" };
 
@@ -38,7 +38,6 @@ export default function BlogIndex() {
     >
       <div className="blog-index-intro">
         <div className="blog-index-kicker">
-          <Sparkle size={15} weight="fill" aria-hidden="true" />
           Field notes from the workbench
         </div>
         <h1 className="graphite-heading blog-index-title">Writing</h1>

@@ -66,6 +66,7 @@ body {
 
 .footer-shell {
   position: relative;
+  padding-top: 4rem;
   z-index: 1;
 }
 
@@ -121,15 +122,12 @@ a {
   animation-name: header-arrive;
 }
 
-.nav-link,
-.footer-link,
-.back-link {
+.site-link {
   position: relative;
+  transition: color 180ms ease, opacity 180ms ease, border-color 180ms ease;
 }
 
-.nav-link::after,
-.footer-link::after,
-.back-link::after {
+.site-link::after {
   position: absolute;
   right: 0;
   bottom: -0.35rem;
@@ -142,11 +140,26 @@ a {
   transition: transform 260ms var(--ease-out);
 }
 
-.nav-link:hover::after,
-.footer-link:hover::after,
-.back-link:hover::after {
+.site-link:hover {
+  color: var(--color-gold) !important;
+}
+
+.site-link:hover::after {
   transform: scaleX(1);
   transform-origin: left;
+}
+
+.card-link-title {
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+  transition: color 180ms ease, text-decoration-color 180ms ease;
+}
+
+.card-link:hover .card-link-title {
+  color: var(--color-gold);
+  text-decoration-color: var(--color-gold);
 }
 
 .site-header nav > * {
@@ -429,6 +442,16 @@ a:focus-visible {
   font-weight: 500;
   line-height: 0.98;
   letter-spacing: -0.045em;
+  transition: color 180ms ease, text-decoration-color 180ms ease;
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.blog-featured-link:hover .blog-featured-title {
+  color: var(--color-gold);
+  text-decoration-color: var(--color-gold);
 }
 
 .blog-featured-arrow {
@@ -511,10 +534,6 @@ a:focus-visible {
     padding-bottom: 1.5rem;
   }
 
-  .site-footer nav {
-    gap: 0.75rem 1.25rem;
-  }
-
   .project-row {
     grid-template-columns: minmax(0, 1fr);
     gap: 1rem;
@@ -538,6 +557,14 @@ a:focus-visible {
 
   .blog-featured-description {
     margin-bottom: 2.75rem;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+  .site-footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
 }
 

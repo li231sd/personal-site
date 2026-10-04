@@ -18,10 +18,10 @@ export default function EntryList({ posts }: { posts: PostMeta[] }) {
           </span>
           <Link
             href={`/blog/${post.slug}`}
-            className="font-[var(--font-sans-var)] flex-1 min-w-0 hover:text-[var(--color-blueprint)] dark:hover:text-[var(--color-blueprint-dark)]"
+            className="card-link font-[var(--font-sans-var)] flex-1 min-w-0"
           >
             <span className="inline-flex max-w-full items-start gap-2">
-              <span className="min-w-0 font-medium">{post.title}</span>
+              <span className="card-link-title min-w-0 font-medium">{post.title}</span>
               <ArrowUpRight
                 aria-hidden="true"
                 size={18}

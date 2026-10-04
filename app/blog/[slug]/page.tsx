@@ -40,7 +40,7 @@ export default async function PostPage({
     >
       <Link
         href="/blog"
-        className="back-link graphite-link font-[var(--font-mono-var)] text-xs uppercase tracking-wide text-[var(--color-ink-muted)] dark:text-[var(--color-chalk-muted)]"
+        className="site-link graphite-link font-[var(--font-mono-var)] text-xs uppercase tracking-wide text-[var(--color-ink-muted)] dark:text-[var(--color-chalk-muted)]"
       >
         ← Writing
       </Link>
